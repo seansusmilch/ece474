@@ -1,6 +1,6 @@
 # 💻 ECE 474 Project
 
-This is our project.
+The goal of this project is to write a simulator for Tomasulo's algorithm.
 
 ## Project Board
 
