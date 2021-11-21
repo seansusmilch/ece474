@@ -1,2 +1,3 @@
-# ece474
-ECE 474 Project
+# 💻 ECE 474 Project
+
+This is our project.
