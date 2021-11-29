@@ -43,7 +43,7 @@ def parse_input():
 
 
 if __name__=='__main__':
-    print('Helpers test')
+    print('Parse Input Test')
     cycles, insts, rf = parse_input()
     print(cycles == 7)
     print(insts == [[0, 2, 4, 6], [2, 4, 3, 5]])
