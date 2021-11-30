@@ -4,6 +4,7 @@ I'm thinking like getting the input data, and printing the output table
 '''
 
 from pathlib import Path
+from beautifultable import BeautifulTable
 
 def parse_input():
     """Returns all input data used in the processor
