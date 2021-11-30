@@ -5,6 +5,7 @@ I'm thinking like getting the input data, and printing the output table
 
 from pathlib import Path
 from beautifultable import BeautifulTable
+from os import get_terminal_size
 
 def parse_input():
     """Returns all input data used in the processor
@@ -41,7 +42,19 @@ def parse_input():
 
     return cycles, instructions, rf
 
+def print_table(add_rs:list, mul_rs:list, rf:list, rat:list, instructions:list):
+    term_size = get_terminal_size().columns
+    # term_size = 155
 
+    rs_tbl = BeautifulTable(
+        maxwidth=term_size if term_size > 80 else 80, 
+        default_alignment=BeautifulTable.ALIGN_LEFT
+        )
+
+    rs_tbl.columns.header = ['', 'Busy', 'Op', 'Vj', 'Vk', 'Qj', 'Qk', 'Disp']
+
+    for rs in add_rs+mul_rs:
+        
 
 if __name__=='__main__':
     print('Parse Input Test')
