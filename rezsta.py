@@ -6,20 +6,26 @@ class ResStation:
     op_code = -1
     dest = -1
     ready = False
+    empty = True
 
     def __init__(self, rs_tag:int):
         self.ready = False
 
     def set_value(self, tag:int, val:int):
+        if self.empty: return
+
         if tag == self.tag_left:
             self.val_left = val
         if tag == self.tag_right:
             self.val_right = val
         self.is_ready()
 
+    def is_empty(self):
+        return self.empty
+
     def new_instruction(self, instruction:list):
         self.ready = False
-
+        self.empty = False
         self.op_code = instruction.pop(0)
         self.dest = instruction.pop(0)
         self.tag_left = instruction.pop(0)
@@ -29,6 +35,7 @@ class ResStation:
         self.val_right = None
     
     def is_ready(self):
+        if self.empty: return False
         self.ready = self.val_right != None and self.val_right != None
         return self.ready
 
@@ -36,7 +43,7 @@ class ResStation:
         if not self.is_ready():
             print('instruction not ready yet!!!')
             return None
-        
+        self.empty = True
         return [self.op_code, self.dest, self.val_left, self.val_right]
 
 

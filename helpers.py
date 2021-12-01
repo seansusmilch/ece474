@@ -54,7 +54,7 @@ def print_table(add_rs:list, mul_rs:list, rf:list, rat:list, instructions:list):
     rs_tbl.columns.header = ['', 'Busy', 'Op', 'Vj', 'Vk', 'Qj', 'Qk', 'Disp']
 
     for rs in add_rs+mul_rs:
-        
+
 
 if __name__=='__main__':
     print('Parse Input Test')

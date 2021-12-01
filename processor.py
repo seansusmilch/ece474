@@ -16,4 +16,5 @@ for x in range(cycles):
     if instructions:
         # try to issue instruction
         op_code, dest, rleft, rright = instructions[0]
-        
+        if op_code == 0 or 1:
+            add_rs[1].new_instruction
