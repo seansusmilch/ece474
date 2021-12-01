@@ -82,7 +82,7 @@ for x in range(cycles):
         rf[dest] = val
 
         tag = rat[dest]
-        rat[dest] = -1
+        rat[dest] = None
 
         for rs in add_rs+mul_rs:
             if rs.tag == tag:
@@ -94,7 +94,7 @@ for x in range(cycles):
         rf[dest] = val
 
         tag = rat[dest]
-        rat[dest] = -1
+        rat[dest] = None
 
         for rs in add_rs+mul_rs:
             if rs.tag == tag:
