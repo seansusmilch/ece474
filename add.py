@@ -18,7 +18,7 @@ class AddUnit:
     def __init__(self) -> None:
         pass
 
-    def dispatch(self, opcode:int, left:int, right:int):
+    def dispatch(self, opcode:int, dest:int, left:int, right:int):
         if self.in_operation == True:
             raise Exception(f'Add unit is already doing an operation!!! OP={[self.op_code,self.left,self.right]}')
 
@@ -28,6 +28,7 @@ class AddUnit:
         self.in_operation = True
         self.last_cycle = 0
         self.op_code = opcode
+        self.dest = dest
         self.left = left
         self.right = right
 
@@ -44,7 +45,7 @@ class AddUnit:
         if self.last_cycle >= self.op_length:
             self.in_operation = False
             self.last_cycle = 0
-            return (self.left + self.right) if self.op_code == 0 else (self.left - self.right)
+            return dest, (self.left + self.right) if self.op_code == 0 else (self.left - self.right)
 
 
 if __name__=='__main__':

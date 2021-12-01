@@ -7,6 +7,7 @@ class ResStation:
     dest = -1
     ready = False
     empty = True
+    dispatched = False
 
     def __init__(self, rs_tag):
         self.ready = False
@@ -38,6 +39,7 @@ class ResStation:
     
     def is_ready(self):
         if self.empty: return False
+        if self.dispatched: return False
         self.ready = self.val_left != None and self.val_right != None
         return self.ready
 
@@ -46,12 +48,15 @@ class ResStation:
             print('instruction not ready yet!!!')
             return None
         # self.empty = True
+        self.dispatched = True
+
         return [self.op_code, self.dest, self.val_left, self.val_right]
 
     def free(self):
         if self.empty:
             print(f'{self.rs_tag} is already free!!111')
         self.empty = True
+        self.dispatched = False
 
 
 if __name__=='__main__':
