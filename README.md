@@ -1,7 +1,17 @@
 # 💻 ECE 474 Project
 
+By Matthew Nelmark and Sean Susmilch
+
 The goal of this project is to write a simulator for Tomasulo's algorithm.
 
+## How To Run It
+
+1. Have python3 installed
+2. Clone repo `git clone https://github.com/seansusmilch/ece474`
+3. Install requirements `pip install -r requirements.txt`
+4. Run it `python processor.py`
+
+---
 ## Project Stuff
 
 Dividing it up into some major parts
