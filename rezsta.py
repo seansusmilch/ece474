@@ -38,7 +38,7 @@ class ResStation:
     
     def is_ready(self):
         if self.empty: return False
-        self.ready = self.val_right != None and self.val_right != None
+        self.ready = self.val_left != None and self.val_right != None
         return self.ready
 
     def get_inst_with_values(self):
