@@ -44,8 +44,13 @@ class ResStation:
         if not self.is_ready():
             print('instruction not ready yet!!!')
             return None
-        self.empty = True
+        # self.empty = True
         return [self.op_code, self.dest, self.val_left, self.val_right]
+
+    def free(self):
+        if self.empty:
+            print(f'{self.rs_tag} is already free!!111')
+        self.empty = True
 
 
 if __name__=='__main__':
