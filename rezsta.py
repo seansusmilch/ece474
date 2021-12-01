@@ -8,8 +8,9 @@ class ResStation:
     ready = False
     empty = True
 
-    def __init__(self, rs_tag:int):
+    def __init__(self, rs_tag):
         self.ready = False
+        self.rs_tag = rs_tag
 
     def set_value(self, tag:int, val:int):
         if self.empty: return
