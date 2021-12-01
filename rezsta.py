@@ -24,16 +24,17 @@ class ResStation:
     def is_empty(self):
         return self.empty
 
-    def new_instruction(self, instruction:list):
+    def new_instruction(self, op_code:int, dest:int, tag_left, tag_right, val_left, val_right):
         self.ready = False
         self.empty = False
-        self.op_code = instruction.pop(0)
-        self.dest = instruction.pop(0)
-        self.tag_left = instruction.pop(0)
-        self.tag_right = instruction.pop(0)
+        self.op_code = op_code
+        self.dest = dest
+        self.tag_left = tag_left
+        self.tag_right = tag_right
 
-        self.val_left = None
-        self.val_right = None
+        self.val_left = val_left
+        self.val_right = val_right
+        self.is_ready()
     
     def is_ready(self):
         if self.empty: return False
