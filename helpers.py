@@ -55,7 +55,7 @@ def print_table(add_rs:list, mul_rs:list, rf:list, rat:list, instructions:list):
     count = 1
     for rs in add_rs+mul_rs:
         # rs = ResStation(rs)
-        print(rs.rs_tag, rs.op_code)
+        print(rs.tag, rs.op_code)
         row = [f'RS{count}']
         count+=1
         
@@ -68,7 +68,7 @@ def print_table(add_rs:list, mul_rs:list, rf:list, rat:list, instructions:list):
             row.append(rs.val_right)
             row.append(rs.tag_left)
             row.append(rs.tag_right)
-            row.append('0')
+            row.append(rs.dispatched)
         else:
             row += [''] * 6
 
@@ -122,6 +122,6 @@ if __name__=='__main__':
     a = [ResStation(10), ResStation(12)]
     b = [ResStation(19)]
 
-    a[0].new_instruction([1,4,7,5])
-    b[0].new_instruction([4,5,2,8])
+    a[0].new_instruction(*[1,4,7,5,3,4])
+    b[0].new_instruction(*[4,5,2,8,36,7])
     print_table(a,b,range(8),range(8),[[0, 2, 4, 6], [2, 4, 3, 5]])

@@ -54,7 +54,7 @@ class ResStation:
 
     def free(self):
         if self.empty:
-            print(f'{self.rs_tag} is already free!!111')
+            print(f'{self.tag} is already free!!111')
         self.empty = True
         self.dispatched = False
 
