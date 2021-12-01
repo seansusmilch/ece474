@@ -47,13 +47,13 @@ class MultiplyUnit:
         if self.last_cycle >= self.op_length_mul and (self.op_code == 2):
             self.in_operation = False
             self.last_cycle = 0
-            return dest, (self.left * self.right) 
+            return self.dest, (self.left * self.right) 
         
         # Reset and return result
         if self.last_cycle >= self.op_length_div and (self.op_code == 3):
             self.in_operation = False
             self.last_cycle = 0
-            return dest, (self.left / self.right) 
+            return self.dest, (self.left / self.right) 
 
 
 if __name__=='__main__':
